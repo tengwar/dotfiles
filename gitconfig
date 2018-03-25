@@ -1,0 +1,12 @@
+[user]
+	name = Grzegorz G.
+	email = tengwar@users.noreply.github.com
+[diff]
+	wsErrorHighlight = all
+[alias]
+	patch = !git --no-pager diff
+[core]
+	editor = nvim
+	pager = diff-so-fancy | less --quit-if-one-screen --RAW-CONTROL-CHARS --no-init --ignore-case --tabs=4 #--pattern '^(Date|added|deleted|modified): '
+[interactive]
+	diffFilter = diff-so-fancy --patch-mode
