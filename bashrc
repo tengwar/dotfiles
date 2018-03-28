@@ -7,7 +7,7 @@
 [[ $- != *i* ]] && return
 
 # Stuff that shouldn't go on Github
-private=".bash_private"
+private="$HOME/.bash_private"
 if [ -s "$private" ]; then
 	source "$private"
 fi
