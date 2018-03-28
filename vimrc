@@ -120,7 +120,7 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 
 "## Colors, etc. ##
 	if has('macunix')
-		colorscheme solarized8_light_flat
+		"colorscheme solarized8_light_flat
 	elseif has('unix')
 		set termguicolors " enable 24-bit color support (doesn't work on macOS Terminal.app)
 		colorscheme solarized8
@@ -128,15 +128,15 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 		let g:airline_theme='solarized'
 		let g:airline_powerline_fonts = 1
 	endif
-	syntax enable     " enable syntax processing (syntax on = this + override some color settings)
-	"set list          " show invisible characters according to the setting below
-	set listchars=eol:↵,tab:▸\ ,trail:␠,nbsp:⎵,extends:▶,precedes:◀
+	syntax enable        " enable syntax processing (syntax on = this + override some color settings)
 	set concealcursor=nc " conceal in normal and commandline(?) modes; stop concealing in insert and visual modes
+	"set list             " show invisible characters according to the setting below
+	set listchars=eol:↵,tab:▸\ ,trail:␠,nbsp:⎵,extends:▶,precedes:◀
 	" other possible ideas: → ▸ ↵ ¬ · ␠ ⎵ ↷ ↶ ▶ ◀
 
 "## Spaces & tabs ##
-	set autoindent    " keep the current indent level if inserting a newline
-	                  " (this may cause problems if pasting multiline text from system clipboard)
+	set autoindent        " keep the current indent level if inserting a newline
+	                      " (this may cause problems if pasting multiline text from system clipboard)
 	if has('macunix')
 		set tabstop=2     " use that many spaces to display a tab character
 		set shiftwidth=2  " move the code this many columns when (un)indenting
@@ -162,7 +162,7 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 	set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,.~,.svn
 	set lazyredraw            " redraw only if you need to, e.g. not in the middle of macros
 	"set showmatch             " highlight matching parentheses, etc. (similar functionality is already provided
-	                           " in a different way, so it seems useless)
+	"                          " in a different way, so it seems useless)
 	set scrolloff=3           " this many lines are visible above/below cursor when scrolling
 	set display=lastline      " when the last line doesn't fit, show as much of if as possible with "@@@" at the end
 	                          " normally it would replace the whole line with @s
