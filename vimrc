@@ -253,7 +253,7 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 	inoremap <c-u> <c-g>u<c-u>
 	inoremap <c-w> <c-g>u<c-w>
 
-	" make j & k move by on-screen, not file columns
+	" make j & k move by on-screen, not file lines
 	nnoremap j gj
 	nnoremap k gk
 	vnoremap j gj
