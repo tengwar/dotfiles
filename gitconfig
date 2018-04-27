@@ -1,6 +1,6 @@
 [user]
 	name = Grzegorz G.
-	email = tengwar@users.noreply.github.com
+	useConfigOnly = true  # Require each repo to have an email set separately.
 [diff]
 	wsErrorHighlight = all
 [alias]
