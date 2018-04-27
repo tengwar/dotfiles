@@ -272,7 +272,8 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 	"vnoremap : ;
 
 	" Make space act as '\' (leader).
-	map <Space> <Leader>
+	"map <Space> <Leader> " This broke The NERD Commenter.
+	let mapleader = "\<Space>"
 
 	" make Y yank from cursor to the EOL, not the whole line (more logical, but vi-incompatible)
 	noremap Y y$
