@@ -1,9 +1,0 @@
-# Where to symlink various dotfiles
-
-gitconfig -> ~/.config/git/config
-
-# If you set up Vim to support the XGD standard, use $XDG_CONFIG_HOME/vim/vimrc
-vimrc -> ~/.vim/vimrc
-
-bash_profile -> ~/.bash_profile
-bashrc -> ~/.bashrc
