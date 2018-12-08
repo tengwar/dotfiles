@@ -88,6 +88,7 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 	"let g:clang_auto_user_options="compile_commands.json, .clang_complete, path"
 
 	" load Pathogen and in turn other plugins (use :Helptags to generate plugin docs)
+	runtime bundle/vim-pathogen/autoload/pathogen.vim
 	execute pathogen#infect()
 
 	" load matchit.vim that comes with vim if user hasn't installed a newer version
