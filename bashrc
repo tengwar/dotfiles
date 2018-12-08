@@ -190,7 +190,7 @@ if command -v powerline-daemon >/dev/null 2>&1; then
 	powerline-daemon -q
 	POWERLINE_BASH_CONTINUATION=1
 	POWERLINE_BASH_SELECT=1
-	. /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+	. /usr/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
 fi
 
 # vim: set noexpandtab ts=4 sw=4 sts=4:
