@@ -47,6 +47,8 @@ alias rgr='rg --no-ignore-vcs'
 alias reverse-dns="dig +noall +answer -x" # reverse DNS lookup (with most of the output cut out)
 alias gs="git status"
 alias gd="git diff"
+alias gb="git branch"
+alias gl="git log --oneline --all --graph --decorate"
 
 alias sudo="sudo " # to allow executing "sudo <some alias>"
 alias now="sudo "
