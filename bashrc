@@ -22,6 +22,11 @@ if [ "$(uname -s)" == "Linux" ]; then
 	export STEAM_FRAME_FORCE_CLOSE=1
 
 	export PATH="$PATH:$HOME/.cargo/bin"
+
+	# Load aliases from default Antergos install.
+	if [ -e "$HOME/.bashrc.aliases" ] ; then
+	   source ~/.bashrc.aliases
+	fi
 elif [ "$(uname -s)" == "Darwin" ]; then
 	export PS1="\n$(tput setaf 2)\w$(tput sgr0)\n\u\$ "
 
