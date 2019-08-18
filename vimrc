@@ -12,6 +12,9 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 
 	" Python Mode
 	let g:pymode_options = 1
+	if has('win32unix')
+		let g:pymode_python = 'python3'
+	endif
 
 	" Much simpler Rainbow Parentheses by junegunn (rainbow_parentheses_junegunn.vim)
 	let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
@@ -88,7 +91,7 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 	"let g:clang_auto_user_options="compile_commands.json, .clang_complete, path"
 
 	" load Pathogen and in turn other plugins (use :Helptags to generate plugin docs)
-	runtime bundle/vim-pathogen/autoload/pathogen.vim
+	runtime bundle/vim-pathogen/autoload/pathogen.vim  " To have it together with plugins in .vim/bundle
 	execute pathogen#infect()
 
 	" load matchit.vim that comes with vim if user hasn't installed a newer version
@@ -118,9 +121,16 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 	set nrformats-=octal           " don't treat numbers starting with 0 as octal (affects e.g. CTRL-A)
 	set formatoptions+=tcqj        " autowrapping, etc. options; prefer +=/-= over = for future compatibility reasons
 	set formatoptions-=v
+	set clipboard=                 " if set to "unnamed", vim uses the OS clipboard by default which is annoying;
+	                               " that's why we explicitly unset it in case OS-level config enabled it
 
 "## Colors, etc. ##
-	if has('macunix')
+	if has('win32unix')
+		colorscheme default
+		let g:airline_solarized_normal_green = 1
+		let g:airline_theme='solarized'
+		let g:airline_powerline_fonts = 1
+	elseif has('macunix')
 		"colorscheme solarized8_light_flat
 	elseif has('unix')
 		set termguicolors " enable 24-bit color support (doesn't work on macOS Terminal.app)
@@ -138,7 +148,7 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 "## Spaces & tabs ##
 	set autoindent        " keep the current indent level if inserting a newline
 	                      " (this may cause problems if pasting multiline text from system clipboard)
-	if has('macunix')
+	if has('win32unix') || has('macunix')
 		set tabstop=2     " use that many spaces to display a tab character
 		set shiftwidth=2  " move the code this many columns when (un)indenting
 		set expandtab     " insert spaces instead of \t when tab is pressed
