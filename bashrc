@@ -170,8 +170,14 @@ export HISTIGNORE="ls:ll:cd:cd -:cd ..:cs:vim:nvim"
 # Bindings for XON/XOFF flow control conflict with Ctrl-S. Disable XON in interactive sessions.
 [[ $- == *i* ]] && stty -ixon
 
-# weryfikuj polecenia uzupełnione z historii
+# Verify commands completed/expanded from history.
 shopt -s histverify
+
+# Check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# Make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 #  autocompletion - e.g. complete -p sudo
 complete -F _sudo now
