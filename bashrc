@@ -50,6 +50,7 @@ alias ll='ls -alh'
 alias lt='ls -halt --full-time'
 alias rgr='rg --no-ignore-vcs'
 alias reverse-dns="dig +noall +answer -x" # reverse DNS lookup (with most of the output cut out)
+alias dirsize="du -hs"
 alias gs="git status"
 alias gd="git diff"
 alias gb="git branch"
@@ -77,7 +78,7 @@ elif [ "$(uname -s)" == "Darwin" ]; then
 	export CLICOLOR=1
 fi
 alias df='df -H'
-alias du='du -ch'  # -c enables displaying a grand total size
+alias du='du -h'  # -c enables displaying a grand total size
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias pgrep='pgrep --color=auto'
