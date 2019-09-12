@@ -81,7 +81,9 @@ alias df='df -H'
 alias du='du -h'  # -c enables displaying a grand total size
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
-alias pgrep='pgrep --color=auto'
+if [ "$(uname -s)" == "Darwin" ]; then
+	alias pgrep='pgrep --color=auto'
+fi
 
 # Safety first. (Use /bin/rm directly to avoid confirmations.)
 alias rm='rm -i'
