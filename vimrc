@@ -10,6 +10,9 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 	" prevent loading Powerline, since we'll use Airline
 	let g:powerline_loaded = 1
 
+	" Deoplete (code completion)
+	let g:deoplete#enable_at_startup = 1
+
 	" Python Mode
 	let g:pymode_options = 1
 	if has('win32unix')
