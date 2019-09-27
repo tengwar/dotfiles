@@ -27,18 +27,20 @@ if [ "$(uname -s)" == "Linux" ]; then
 	if [ -e "$HOME/.bashrc.aliases" ] ; then
 		source ~/.bashrc.aliases
 	fi
+
+	completion_script_path="/usr/share/bash-completion/bash_completion"
 elif [ "$(uname -s)" == "Darwin" ]; then
 	export PS1="\n$(tput setaf 2)\w$(tput sgr0)\n\u\$ "
 
-	# Load completion scripts.
-	# [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-	brew_prefix="$(brew --prefix)"
-	if [ -f "$brew_prefix/etc/bash_completion" ]; then
-		. "$brew_prefix/etc/bash_completion"
-	fi
-
 	# Add clang-tidy, clang-format, etc. to $PATH
 	export PATH="$PATH:/usr/local/opt/llvm/bin"
+
+	completion_script_path="$(brew --prefix)/etc/bash_completion"
+fi
+
+# Load Bash completion scripts.
+if [ -f "$completion_script_path" ]; then
+	. "$completion_script_path"
 fi
 
 
