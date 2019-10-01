@@ -21,6 +21,7 @@ if [ "$(uname -s)" == "Linux" ]; then
 	# Close Steam Window, not just minimize it.
 	export STEAM_FRAME_FORCE_CLOSE=1
 
+	# Add Cargo installed binaries to PATH.
 	export PATH="$PATH:$HOME/.cargo/bin"
 
 	# Load aliases from default Antergos install.
@@ -44,7 +45,7 @@ if [ -f "$completion_script_path" ]; then
 fi
 
 
-###  Useful aliases ###
+### Useful aliases ###
 alias wat='pwd && ls'
 alias cd..='cd ..'
 alias bc='bc -l'  # enable floats
