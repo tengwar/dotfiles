@@ -114,7 +114,7 @@ gamekeys_off()
 update_vim_plugins() {  # Pathogen doesn't do that by itself.
 	if ! curl -s --head  --request GET https://github.com | grep "200 OK" > /dev/null; then
 		echo "Can't reach Github, exiting."
-		exit 1
+		return 1
 	fi
 	for i in ~/.vim/bundle/*
 	do
