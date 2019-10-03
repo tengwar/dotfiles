@@ -88,7 +88,7 @@ if [ "$(uname -s)" == "Darwin" ]; then
 	alias pgrep='pgrep --color=auto'
 fi
 
-# Safety first. (Use /bin/rm directly to avoid confirmations.)
+# Safety first. (Prepend \, e.g. "\rm" to run the bare command.)
 alias rm='rm -i'
 alias unlink='unlink -i'
 
