@@ -63,15 +63,6 @@ alias sudo="sudo " # to allow executing "sudo <some alias>"
 alias now="sudo "
 alias fucking="sudo "
 
-if [ "$(uname -s)" == "Linux" ]; then
-	# Package management
-	alias gimme="sudo yaourt -Sa "
-	alias upd8="sudo yaourt -Syua"
-	alias upgr="sudo yaourt -Syua"
-	alias szukaj="yaourt -Ss "
-	alias w00t="yaourt -Si " # or maybe "pacman -Qi"?
-fi
-
 # Enable human readable filesizes and colors.
 if [ "$(uname -s)" == "Linux" ]; then
 	alias ls='ls --color=auto -h'
