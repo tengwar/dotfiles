@@ -205,7 +205,7 @@ if [ -n "$GJS_PATH" ]; then
 fi
 
 # Powerline
-if command -v powerline-daemon >/dev/null 2>&1; then
+if [ -x "$(command -v powerline-daemon)" ]; then
 	powerline-daemon -q
 	POWERLINE_BASH_CONTINUATION=1
 	POWERLINE_BASH_SELECT=1
