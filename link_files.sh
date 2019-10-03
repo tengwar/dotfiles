@@ -4,6 +4,7 @@
 # gitconfig -> ~/.config/git/config
 # On macOS: ln -s ~/Code/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/Code/dotfiles/gitconfig ~/.config/git/config
+echo "Please install diff-highlight or diffr manually."
 
 # vimrc -> ~/.vim/vimrc
 # If you set up Vim to support the XGD standard, use $XDG_CONFIG_HOME/vim/vimrc
