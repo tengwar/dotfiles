@@ -45,26 +45,14 @@ if [ -f "$completion_script_path" ]; then
 fi
 
 
-### Useful aliases ###
-alias wat='pwd && ls'
-alias cd..='cd ..'
-alias bc='bc -l'  # enable floats
-alias ll='ls -alh'
-alias lt='ls -halt --full-time'
-alias rgr='rg --no-ignore-vcs'
-alias reverse-dns="dig +noall +answer -x" # reverse DNS lookup (with most of the output cut out)
-alias dirsize="du -hs"
-alias gs="git status"
-alias gd="git diff"
-alias gb="git branch"
-alias gl="git log --oneline --all --graph --decorate"
-
-alias sudo="sudo " # to allow executing "sudo <some alias>"
-alias now="sudo "
-alias fucking="sudo "
+### Aliases ###
 
 # Enable human readable filesizes and colors.
-if [ "$(uname -s)" == "Linux" ]; then
+if [ -x "$(command -v lsd)" ]; then
+	alias ls='lsd'
+elif [ -x "$(command -v exa)" ]; then
+	alias ls='exa'
+elif [ "$(uname -s)" == "Linux" ]; then
 	alias ls='ls --color=auto -h'
 elif [ "$(uname -s)" == "Darwin" ]; then
 	alias ls='ls -h'
@@ -78,6 +66,24 @@ alias fgrep='fgrep --color=auto'
 if [ "$(uname -s)" == "Darwin" ]; then
 	alias pgrep='pgrep --color=auto'
 fi
+
+# Useful aliases
+alias cd..='cd ..'
+alias bc='bc -l'  # enable floats
+alias ll='ls -alh'
+alias lt='ls -halt --full-time'
+alias wat='pwd && ls'
+alias rgr='rg --no-ignore-vcs'
+alias reverse-dns="dig +noall +answer -x" # reverse DNS lookup (with most of the output cut out)
+alias dirsize="du -hs"
+alias gs="git status"
+alias gd="git diff"
+alias gb="git branch"
+alias gl="git log --oneline --all --graph --decorate"
+
+alias sudo="sudo " # to allow executing "sudo <some alias>"
+alias now="sudo "
+alias fucking="sudo "
 
 # Safety first. (Prepend \, e.g. "\rm" to run the bare command.)
 alias rm='rm -i'
