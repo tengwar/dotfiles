@@ -59,6 +59,9 @@ elif [ "$(uname -s)" == "Darwin" ]; then
 	# Enable coloring in ls.
 	export CLICOLOR=1
 fi
+if [ -x "$(command -v bat)" ]; then
+	alias cat='bat'
+fi
 alias df='df -H'
 alias du='du -h'  # -c enables displaying a grand total size
 alias grep='grep --color=auto'
