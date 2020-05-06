@@ -3,6 +3,9 @@
 
 # gitconfig -> ~/.config/git/config
 # On macOS: ln -s ~/Code/dotfiles/gitconfig ~/.gitconfig
+# On Windows add this to ~/.gitconfig file:
+# [include]
+#    path = C:\\Users\\Username\\Code\\dotfiles\\gitconfig
 ln -s ~/Code/dotfiles/gitconfig ~/.config/git/config
 echo "Please install diff-highlight or diffr manually."
 
