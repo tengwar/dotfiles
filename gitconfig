@@ -11,3 +11,5 @@
 [interactive]
 	# diffFilter = diff-so-fancy --patch-mode  # Breaks Git, see https://github.com/so-fancy/diff-so-fancy/issues/35
 	diffFilter = diff-highlight | less --quit-if-one-screen --RAW-CONTROL-CHARS --no-init --ignore-case --tabs=4 #--pattern '^(Date|added|deleted|modified): '
+[pull]
+	rebase = true
