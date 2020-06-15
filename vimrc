@@ -15,7 +15,7 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 
 	" Python Mode
 	let g:pymode_options = 1
-	if has('win32unix')
+	if has('win32') || has('win32unix')
 		let g:pymode_python = 'python3'
 	endif
 
@@ -105,7 +105,10 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 "## Neovim ##
 	if has('nvim')
 		" Setting this makes startup faster.
-		if has('macunix')
+		if has('win32')
+			"let g:python_host_prog = 'C:\Python27\python.exe'
+			let g:python3_host_prog = 'C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\python3.exe'
+		elseif has('macunix')
 			"let g:python_host_prog = '/usr/local/bin/python2'
 			let g:python3_host_prog = '/usr/local/bin/python3'
 		elseif has('unix')
@@ -128,7 +131,7 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 	                               " that's why we explicitly unset it in case OS-level config enabled it
 
 "## Colors, etc. ##
-	if has('win32unix')
+	if has('win32') || has ('win32unix')
 		colorscheme default
 		let g:airline_solarized_normal_green = 1
 		let g:airline_theme='solarized'
@@ -152,7 +155,7 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 "## Spaces & tabs ##
 	set autoindent        " keep the current indent level if inserting a newline
 	                      " (this may cause problems if pasting multiline text from system clipboard)
-	if has('win32unix') || has('macunix')
+	if has('win32') || has('win32unix') || has('macunix')
 		set tabstop=2     " use that many spaces to display a tab character
 		set shiftwidth=2  " move the code this many columns when (un)indenting
 		set expandtab     " insert spaces instead of \t when tab is pressed
