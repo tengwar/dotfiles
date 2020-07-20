@@ -82,6 +82,7 @@ alias dirsize="du -hs"
 alias gs="git status"
 alias gd="git diff"
 alias gb="git branch"
+alias gco="git checkout"
 alias gl="git log --oneline --all --graph --decorate"
 
 alias sudo="sudo " # to allow executing "sudo <some alias>"
