@@ -107,7 +107,7 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 		" Setting this makes startup faster.
 		if has('win32')
 			"let g:python_host_prog = 'C:\Python27\python.exe'
-			let g:python3_host_prog = 'C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\python3.exe'
+			let g:python3_host_prog = 'C:\Program Files\Python38\python.exe'
 		elseif has('macunix')
 			"let g:python_host_prog = '/usr/local/bin/python2'
 			let g:python3_host_prog = '/usr/local/bin/python3'
