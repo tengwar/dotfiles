@@ -75,7 +75,6 @@ alias cd..='cd ..'
 alias bc='bc -l'  # enable floats
 alias ll='ls -alh'
 alias lt='ls -halt --full-time'
-alias wat='pwd && ls'
 alias rgr='rg --no-ignore-vcs'
 alias reverse-dns="dig +noall +answer -x" # reverse DNS lookup (with most of the output cut out)
 alias dirsize="du -hs"
@@ -87,7 +86,6 @@ alias gl="git log --oneline --all --graph --decorate"
 
 alias sudo="sudo " # to allow executing "sudo <some alias>"
 alias now="sudo "
-alias fucking="sudo "
 
 # Safety first. (Prepend \, e.g. "\rm" to run the bare command.)
 alias rm='rm -i'
@@ -188,17 +186,6 @@ shopt -s checkwinsize
 
 #  autocompletion - e.g. complete -p sudo
 complete -F _sudo now
-complete -F _sudo fucking
-####testing!#### - only for bashrc
-#_gimme()
-#{
-#cur=`_get_cword`
-#COMPREPLY=( $( apt-cache pkgnames $cur 2> /dev/null ) )
-#return 0
-#
-#} &&
-#complete -F _gimme $filenames gimme
-################
 
 # Force 256 colors in Gnome Shell Dropdown Terminal
 if [ -n "$GJS_PATH" ]; then
