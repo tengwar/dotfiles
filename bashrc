@@ -80,6 +80,7 @@ alias reverse-dns="dig +noall +answer -x" # reverse DNS lookup (with most of the
 alias dirsize="du -hs"
 alias gs="git status"
 alias gd="git diff"
+alias gds="git diff --staged"
 alias gb="git branch"
 alias gco="git checkout"
 alias gl="git log --oneline --all --graph --decorate"
