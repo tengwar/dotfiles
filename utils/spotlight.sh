@@ -15,7 +15,7 @@ mkdir -p "$images_destination"
 for file in "$spotlight_location"/* ; do
 	filesize=$(stat -c%s "$file")
 	# Images under 100 kB are unlikely to be wallpapers.
-	if [ $filesize -ge 100000 ]; then
+	if [ "$filesize" -ge 100000 ]; then
 		new_filename="$(basename "$file").jpg"
 		echo "Copying $new_filename..."
 		cp "$file" "$images_destination/$new_filename"
