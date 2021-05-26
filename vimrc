@@ -131,7 +131,7 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 	                               " that's why we explicitly unset it in case OS-level config enabled it
 
 "## Colors, etc. ##
-	if has('win32') || has ('win32unix')
+	if has('win32') || has('win32unix')
 		colorscheme default
 		let g:airline_solarized_normal_green = 1
 		let g:airline_theme='solarized'
