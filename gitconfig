@@ -2,6 +2,7 @@
 	name = Grzegorz G.
 	useConfigOnly = true  # Require each repo to have an email set separately.
 [diff]
+	algorithm = patience
 	wsErrorHighlight = all
 [alias]
 	patch = !git --no-pager diff
