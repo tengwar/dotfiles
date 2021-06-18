@@ -3,6 +3,8 @@
 	useConfigOnly = true  # Require each repo to have an email set separately.
 [diff]
 	algorithm = patience
+	colorMoved = default
+	colorMovedWS = allow-indentation-change
 	wsErrorHighlight = all
 [alias]
 	patch = !git --no-pager diff
