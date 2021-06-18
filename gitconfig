@@ -10,9 +10,18 @@
 	patch = !git --no-pager diff
 [core]
 	editor = nvim
+	#pager = delta
 	pager = diff-so-fancy | less --quit-if-one-screen --RAW-CONTROL-CHARS --no-init --ignore-case --tabs=4 #--pattern '^(Date|added|deleted|modified): '
 [interactive]
-	# diffFilter = diff-so-fancy --patch-mode  # Breaks Git, see https://github.com/so-fancy/diff-so-fancy/issues/35
+	#diffFilter = delta --color-only
+	#diffFilter = diff-so-fancy --patch-mode  # Breaks Git, see https://github.com/so-fancy/diff-so-fancy/issues/35
 	diffFilter = diff-highlight | less --quit-if-one-screen --RAW-CONTROL-CHARS --no-init --ignore-case --tabs=4 #--pattern '^(Date|added|deleted|modified): '
+[delta]
+	#line-numbers = true
+	# WA to see intra-line changes in Cmder (16-color limitation)
+	#minus-emph-style = "normal bright-red"
+	#plus-emph-style = "syntax bright-green"
+	# Alternative WA for Cmder: mark changed lines by text color, changed parts by bg color, don't highlight syntax
+	#diff-so-fancy = true
 [pull]
 	rebase = true
