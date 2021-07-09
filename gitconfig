@@ -25,3 +25,5 @@
 	#diff-so-fancy = true
 [pull]
 	rebase = true
+[credential]
+	helper = cache
