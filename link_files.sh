@@ -7,7 +7,7 @@
 # [include]
 #    path = C:\\Users\\Username\\Code\\dotfiles\\gitconfig
 ln -s ~/Code/dotfiles/gitconfig ~/.config/git/config
-echo "Please install diff-highlight or diffr manually."
+echo "Please install a diff highlighter manually."
 
 # vimrc -> ~/.vim/vimrc
 # If you set up Vim to support the XGD standard, use $XDG_CONFIG_HOME/vim/vimrc
