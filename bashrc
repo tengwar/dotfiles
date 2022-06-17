@@ -6,11 +6,15 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Stuff that shouldn't go on Github
-private="$HOME/.bash_private"
-if [ -s "$private" ]; then
-	source "$private"
-fi
+# Source a file if it exists and is not empty.
+try_source() {
+	if [ -s "$1" ]; then
+		source "$1"
+	fi
+}
+
+# Stuff that shouldn't go on Github.
+try_source "$HOME/.bash_private"
 
 if [ "$(uname -s)" == "Linux" ]; then
 	export PS1='[\u@\h \W]\$ '
@@ -25,9 +29,7 @@ if [ "$(uname -s)" == "Linux" ]; then
 	export PATH="$PATH:$HOME/.cargo/bin"
 
 	# Load aliases from default Antergos install.
-	if [ -e "$HOME/.bashrc.aliases" ] ; then
-		source ~/.bashrc.aliases
-	fi
+	try_source "$HOME/.bashrc.aliases"
 
 	completion_script_path="/usr/share/bash-completion/bash_completion"
 elif [ "$(uname -s)" == "Darwin" ]; then
