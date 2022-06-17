@@ -31,6 +31,9 @@ if [ "$(uname -s)" == "Linux" ]; then
 	# Load aliases from default Antergos install.
 	try_source "$HOME/.bashrc.aliases"
 
+	# If a command is not recognized, suggest packages providing it.
+	try_source "/usr/share/doc/pkgfile/command-not-found.bash"
+
 	completion_script_path="/usr/share/bash-completion/bash_completion"
 elif [ "$(uname -s)" == "Darwin" ]; then
 	export PS1="\n$(tput setaf 2)\w$(tput sgr0)\n\u\$ "
