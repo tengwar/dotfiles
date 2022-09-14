@@ -10,18 +10,19 @@
 	patch = !git --no-pager diff
 [core]
 	editor = nvim
-[pager]
-	diff = delta
-	log = delta
-	reflog = delta
-	show = delta
-	#alternative: diff-so-fancy | less --quit-if-one-screen --RAW-CONTROL-CHARS --no-init --ignore-case --tabs=4 #--pattern '^(Date|added|deleted|modified): '
+	pager = delta
+	# Setting dsf as a pager for everything, breaks e.g. git grep. It needs more granular settings in the [pager] section.
+	#pager = diff-so-fancy | less --quit-if-one-screen --RAW-CONTROL-CHARS --no-init --ignore-case --tabs=4 #--pattern '^(Date|added|deleted|modified): '
 [interactive]
-	diffFilter = delta --color-only --features=interactive
+	diffFilter = delta --color-only
 	#diffFilter = diff-so-fancy --patch-mode  # Breaks Git, see https://github.com/so-fancy/diff-so-fancy/issues/35
 	#diffFilter = diff-highlight | less --quit-if-one-screen --RAW-CONTROL-CHARS --no-init --ignore-case --tabs=4 #--pattern '^(Date|added|deleted|modified): '
 [delta]
+	navigate = true    # use n and N to move between diff sections
+	light = false      # terminal background setting; false means dark
 	#line-numbers = true
+	hyperlinks = true  # git blame commits will link to GitHub
+
 	# WA to see intra-line changes in Cmder (16-color limitation)
 	#minus-emph-style = "normal bright-red"
 	#plus-emph-style = "syntax bright-green"
@@ -29,5 +30,8 @@
 	#diff-so-fancy = true
 [pull]
 	rebase = true
+[merge]
+	# Merge conflict markers also include the original text.
+	conflictstyle = diff3
 [credential]
 	helper = cache
