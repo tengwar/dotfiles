@@ -19,6 +19,9 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 		let g:pymode_python = 'python3'
 	endif
 
+	" use Python 3 in Gundo, instead of Python 2
+	let g:gundo_prefer_python3 = 1
+
 	" Much simpler Rainbow Parentheses by junegunn (rainbow_parentheses_junegunn.vim)
 	let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
 
