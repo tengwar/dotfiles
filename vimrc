@@ -135,15 +135,17 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 
 "## Colors, etc. ##
 	if has('win32') || has('win32unix')
-		colorscheme default
+		set termguicolors " enable 24-bit color support
+		colorscheme solarized8
 		let g:airline_solarized_normal_green = 1
 		let g:airline_theme='solarized'
 		let g:airline_powerline_fonts = 1
 	elseif has('macunix')
+		"set termguicolors " enable 24-bit color support (doesn't work on macOS Terminal.app)
 		set background=light
 		colorscheme solarized8_flat
 	elseif has('unix')
-		set termguicolors " enable 24-bit color support (doesn't work on macOS Terminal.app)
+		set termguicolors " enable 24-bit color support
 		colorscheme solarized8
 		let g:airline_solarized_normal_green = 1
 		let g:airline_theme='solarized'
