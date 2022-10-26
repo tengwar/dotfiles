@@ -175,7 +175,7 @@ set nocompatible " this is just to be safe; having a user .vimrc implies nocompa
 "## UI ##
 	set title                 " show a custom title on terminal's tab/titlebar
 	set number                " show line numbers
-	set laststatus=2          " when to show the statusbar; 0=never, 1=with more than 1 window, 2=always
+	set laststatus=2          " show the statusbar: 0=never, 1=with >1 window, 2=always, 3=globally
 	set ruler                 " show the coords of cursor in the statusbar
 	set showcmd               " show the last used command in the bottom right corner
 	"set cursorline            " highlight current line
