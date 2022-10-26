@@ -3,7 +3,7 @@
 # ~/.bashrc
 #
 
-# If not running interactively, don't do anything
+# If not running interactively, don't do anything.
 [[ $- != *i* ]] && return
 
 # Source a file if it exists and is not empty.
@@ -154,7 +154,7 @@ update_vim_plugins() {  # Pathogen doesn't do that by itself.
 
 ### Customizations ###
 
-## Eternal bash history.
+## Eternal bash history ##
 	# Undocumented feature which sets the size to "unlimited".
 	# http://stackoverflow.com/questions/9457233/unlimited-bash-history
 	export HISTFILESIZE=
@@ -181,7 +181,7 @@ export HISTIGNORE="ls:ll:cd:cd -:cd ..:cs:vim:nvim"
 # Bindings for XON/XOFF flow control conflict with Ctrl-S. Disable XON in interactive sessions.
 [[ $- == *i* ]] && stty -ixon
 
-# Verify commands completed/expanded from history.
+# Don't immediately run commands completed/expanded from history.
 shopt -s histverify
 
 # Check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
