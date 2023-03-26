@@ -93,6 +93,10 @@ alias gl="git log --oneline --all --graph --decorate"
 alias sudo="sudo " # to allow executing "sudo <some alias>"
 alias now="sudo "
 
+if [ -x "$(command -v pactree)" ]; then
+	alias reverse-deps='pactree --color --reverse --optional=-1'
+fi
+
 # Safety first. (Prepend \, e.g. "\rm" to run the bare command.)
 alias rm='rm -i'
 alias unlink='unlink -i'
