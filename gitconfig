@@ -20,6 +20,7 @@
 [delta]
 	navigate = true    # use n and N to move between diff sections
 	light = false      # terminal background setting; false means dark
+	#side-by-side = true
 	#line-numbers = true
 	hyperlinks = true  # git blame commits will link to GitHub
 
